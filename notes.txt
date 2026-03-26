@@ -21,6 +21,9 @@ docker run -d \
 // container already there but not running
 docker stop/start/pause containerId 
 
+// delete a container 
+docker rm  containerId
+
 //view docker networks
 docker network ls 
 
@@ -38,3 +41,13 @@ docker logs containerId
 
 // access the cmd of the container
 docker exec -it containerId /bin/bash(or sh) //it = interactive shell
+
+################## DOCKER COMPOSE -> PRECONFIG ALL THESE COMMANDS ##################
+// no need to create a common network in compose its automatic
+// unlike Dockerfile u can name the yaml file anything
+// the indentaion should all be correct in the yaml file, -f ->fileName , up-> start, down->stop
+
+docker-compose -f DckCompose.yaml up -d
+
+//stop
+docker-compose -f DckCompose.yaml down
